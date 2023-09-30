@@ -49,4 +49,52 @@
         }
 
         button {
-            background-color: #
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .error {
+            color: #ff0000;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Welcome to My Website</h1>
+        <p>Please enter the access code:</p>
+        <input type="text" id="accessCode" placeholder="Enter code">
+        <button id="submitButton">Submit</button>
+        <p id="errorText" class="error"></p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const accessCodeInput = document.getElementById("accessCode");
+            const submitButton = document.getElementById("submitButton");
+            const errorText = document.getElementById("errorText");
+
+            submitButton.addEventListener("click", function () {
+                const enteredCode = accessCodeInput.value.trim();
+
+                if (enteredCode === "ME2SOUL") {
+                    window.location.href = "https://curses.melasol2020.com";
+                } else {
+                    errorText.textContent = "אנא צרו קשר עם אניעם או רמון";
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
